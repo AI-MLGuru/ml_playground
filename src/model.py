@@ -1,12 +1,10 @@
-class BaseModel:
+def train_fake_model(X, y):
   """
-  A simple base class any ML models.
-  Any future model should follow this structure
+  Stimulates training a Model
   """
-  def __init__(self):
-    self.is_trained = False
-    
-  def train(self, x, y):
-    raise NotImplementedError("Train method not implemented")
-  def predict(self, x, y):
-    raise NotImplementedError("Predict method not implemented")
+  print("Model recieved data:")
+  print("X:", X)
+  print("Y:", y)
+  
+  model = {"slope":2 }
+  return model
