@@ -1,5 +1,6 @@
 import numpy as np
 # Pure ML Fundamentals, NO sklearn. No shortcuts
+np.random.seed(42) # Setting random seeds for consistent results
 class LinearRegression:
   def __init__(self):
     self.weight = np.random.randn()

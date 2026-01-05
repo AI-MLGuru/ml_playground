@@ -1,8 +1,14 @@
 import numpy as np
 from src.utils import generate_data
 from src.model import LinearRegression
+np.random.seed(42) # Setting random seeds for consistent results
 
-def train_model(epochs=100, lr=0.1):
+def train_model(epochs=100, lr=0.1, MODEL_PATH = "/storage/emulated/0/projects/ml_playground/linear_model.npz"):
+  print("=" * 40)
+  print("EXPERIMENT START")
+  print(f"Epochs: {epochs}")
+  print(f"Learning Rate: {lr}")
+  print("=" * 40)
   X, y = generate_data()
   # Forcing x and y to be 1D arrays
   X = np.array(X).flatten()
@@ -35,7 +41,9 @@ def train_model(epochs=100, lr=0.1):
   print("Evaluation Metrics")
   print("Mean Squared Error: ", mse)
   
-  MODEL_PATH = "/storage/emulated/0/projects/ml_playground/linear_model.npz"
   model.save(MODEL_PATH)
   print("Model Saved Successfully to: ", MODEL_PATH)
-  
+  print("=" * 40)
+  print("EXPERIMENT END")
+  print(f"Final MSE: {mse}")
+  print("=" * 40)
