@@ -27,3 +27,11 @@ def train_model(epochs=100, lr=0.1):
       
   print("Training complete")
   print("Learned weight:", round(float(model.weight), 2), "bias:", round(float(model.bias), 2))
+  
+  # Model Evaluation metrics (MSE - Mean Squared Error)
+  y_final_pred = model.predict(X)
+  mse = np.mean((y - y_final_pred)**2)
+  
+  print("Evaluation Metrics")
+  print("Mean Squared Error: ", mse)
+  
