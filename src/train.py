@@ -35,3 +35,7 @@ def train_model(epochs=100, lr=0.1):
   print("Evaluation Metrics")
   print("Mean Squared Error: ", mse)
   
+  MODEL_PATH = "/storage/emulated/0/projects/ml_playground/linear_model.npz"
+  model.save(MODEL_PATH)
+  print("Model Saved Successfully to: ", MODEL_PATH)
+  

@@ -11,3 +11,10 @@ class LinearRegression:
   def update(self, dW, dB, lr):
     self.weight -= lr * dW
     self.bias -= lr * dB
+    
+  def save(self, MODEL_PATH = "/storage/emulated/0/projects/ml_playground/linear_model.npz"):
+    np.savez(MODEL_PATH, weight=self.weight, bias=self.bias)
+  def load(self, MODEL_PATH = "/storage/emulated/0/projects/ml_playground/linear_model.npz"):
+    data = np.load(MODEL_PATH)
+    self.weight = data["weight"].item()
+    self.bias = data["bias"].item()
